@@ -1,4 +1,4 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+This is a [**React Native**](https://reactnative.dev) template project version v0.73.8 with [**react-native-vector-icons**](https://github.com/oblador/react-native-vector-icons) package pre-installed, prepared by [**FerRiv3ra**](https://github.com/FerRiv3ra).
 
 # Getting Started
 
