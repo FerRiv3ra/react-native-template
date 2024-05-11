@@ -1,33 +1,50 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React from 'react';
 import type {PropsWithChildren} from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import Icon from 'react-native-vector-icons/Ionicons';
+
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
+
+const Head = () => {
+  return (
+    <View
+      style={{
+        backgroundColor: '#EFEFEF',
+        height: 230,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+      }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: -40,
+          left: -120,
+          width: 500,
+        }}>
+        <Icon name="logo-react" color={'rgba(87, 109, 236, 0.5)'} size={500} />
+      </View>
+      <Text style={{fontSize: 35, fontWeight: '900', textAlign: 'center'}}>
+        {'Welcome to \nReact Native \n& \nVector Icons'}
+      </Text>
+      <Text style={{position: 'absolute', top: 0, right: 10}}>
+        By FerRiv3ra
+      </Text>
+    </View>
+  );
+};
 
 function Section({children, title}: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -64,32 +81,25 @@ function App(): React.JSX.Element {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
+        <Head />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
+          <Section title="Pre installed package">
+            This template has the{' '}
+            <Text style={styles.highlight}>react-native-vector-icons</Text>{' '}
+            package pre-installed for the use of icons in your react native
+            application.
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
+          <Section title="Ready to use">
+            This template is ready to be used, just run{' '}
+            <Text style={styles.highlight}>npm install</Text> to install the
+            dependencies.
           </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
         </View>
       </ScrollView>
     </SafeAreaView>
